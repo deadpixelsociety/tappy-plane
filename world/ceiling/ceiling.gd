@@ -3,6 +3,7 @@ class_name Ceiling
 
 onready var _animation_player: AnimationPlayer = $AnimationPlayer
 
+
 func start() -> void:
 	stop()
 	_animation_player.play("scroll")

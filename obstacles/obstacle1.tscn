@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://obstacles/stalagtite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://obstacles/stalagmite.tscn" type="PackedScene" id=2]
+[ext_resource path="res://star/star.tscn" type="PackedScene" id=3]
+[ext_resource path="res://obstacles/obstacle.gd" type="Script" id=4]
 
-[node name="Node2D" type="Node2D"]
+[node name="Obstacle1" type="Node2D" groups=[
+"obstacles",
+]]
+script = ExtResource( 4 )
 
 [node name="Stalagtite" parent="." instance=ExtResource( 1 )]
-position = Vector2( 164.217, 82.6381 )
+position = Vector2( -12, -185 )
 
 [node name="Stalagmite" parent="." instance=ExtResource( 2 )]
-position = Vector2( 408.953, 368.693 )
+position = Vector2( -12, 185 )
+
+[node name="Star" parent="." instance=ExtResource( 3 )]
+rotation = 4.46638e-06
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -10.0793, -0.62999 )
+scale = Vector2( 6.54365, 30.1672 )

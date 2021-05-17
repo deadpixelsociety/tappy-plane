@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://obstacles/stalagmite.png" type="Texture" id=1]
+[ext_resource path="res://obstacles/stalagmite.gd" type="Script" id=2]
 
 [node name="Stalagmite" type="Area2D"]
 collision_layer = 4
+script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -54, 117, 8, -119, 16, -119, 54, 118 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Stalagmite_body_entered" flags=6]
